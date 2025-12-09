@@ -1,0 +1,49 @@
+/* App-specific helpers and a lightweight card/container layer.
+   Most layout and utilities are handled by Tailwind in JSX, this
+   file provides small complementary helpers for non-Tailwind cases. */
+
+#root {
+  max-width: var(--app-max-width, 1280px);
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.app-main {
+  display: block;
+  width: 100%;
+}
+
+.card {
+  background: rgb(var(--card-bg, 255 255 255));
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.06);
+  padding: 1rem;
+}
+
+.glass {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+.muted { color: var(--muted, #6b7280); }
+
+.avatar-sm { width: 2.5rem; height: 2.5rem; border-radius: 9999px; display:inline-flex; align-items:center; justify-content:center; }
+
+.btn-primary {
+  background: linear-gradient(90deg, #10b981, #059669);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* small responsive tweaks used by component wrappers */
+@media (max-width: 640px) {
+  #root { padding: 0.75rem; }
+}
+
+/* Keep old demo helper for docs links if present */
+.read-the-docs { color: #888; }
