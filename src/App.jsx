@@ -852,6 +852,47 @@ const MessagesPage = () => {
     </div>
   );
 };
+
+const SettingsPage = () => {
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold text-gray-800">Settings</h1>
+        <p className="text-gray-500 mt-1">Manage your profile and application preferences</p>
+      </div>
+
+      <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+        <h3 className="text-xl font-bold mb-4 text-gray-800">Profile</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="text-sm text-gray-600">Full name</label>
+            <input className="w-full mt-2 px-4 py-2 border rounded-xl" defaultValue="Dr. Smith" />
+          </div>
+          <div>
+            <label className="text-sm text-gray-600">Email</label>
+            <input className="w-full mt-2 px-4 py-2 border rounded-xl" defaultValue="dr.smith@example.com" />
+          </div>
+        </div>
+        <div className="mt-6">
+          <h3 className="text-lg font-bold mb-2 text-gray-800">Preferences</h3>
+          <div className="space-y-2">
+            <label className="flex items-center space-x-3">
+              <input type="checkbox" defaultChecked className="w-4 h-4" />
+              <span className="text-sm text-gray-700">Email notifications</span>
+            </label>
+            <label className="flex items-center space-x-3">
+              <input type="checkbox" defaultChecked className="w-4 h-4" />
+              <span className="text-sm text-gray-700">SMS reminders for appointments</span>
+            </label>
+          </div>
+        </div>
+        <div className="mt-6 flex justify-end">
+          <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2 rounded-xl">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default function App() {
   const [currentPage, setCurrentPage] = React.useState("dashboard");
   const [isMobileOpen, setIsMobileOpen] = React.useState(false);
@@ -860,7 +901,11 @@ export default function App() {
   dashboard: <DashboardPage />,
   appointments: <AppointmentsPage />,
   patients: <PatientsPage />,
-  medicalRecords: <MedicalRecordsPage />,
+    medicalRecords: <MedicalRecordsPage />,
+    'medical-records': <MedicalRecordsPage />,
+    prescriptions: <PrescriptionsPage />,
+    billing: <BillingPage />,
+    settings: <SettingsPage />,
   schedule: <SchedulePage />,
   analytics: <AnalyticsPage />,
   messages: <MessagesPage />,
